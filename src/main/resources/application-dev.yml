@@ -1,0 +1,2 @@
+sdk-config:
+  config-path: classpath:sdk_config.yml

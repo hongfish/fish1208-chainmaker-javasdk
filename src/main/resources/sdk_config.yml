@@ -1,0 +1,48 @@
+chain_client:
+  # 链ID
+  chain_id: "chain1"
+  # 组织ID
+  org_id: "wx-org1.chainmaker.org"
+  # 客户端用户私钥路径
+  user_key_file_path: "crypto-config/wx-org1.chainmaker.org/user/admin1/admin1.tls.key"
+  # 客户端用户证书路径
+  user_crt_file_path: "crypto-config/wx-org1.chainmaker.org/user/admin1/admin1.tls.crt"
+  # 客户端用户交易签名私钥路径
+  user_sign_key_file_path: "crypto-config/wx-org1.chainmaker.org/user/admin1/admin1.sign.key"
+  # 客户端用户交易签名证书路径
+  user_sign_crt_file_path: "crypto-config/wx-org1.chainmaker.org/user/admin1/admin1.sign.crt"
+
+  nodes:
+    - # 节点地址，格式为：IP:端口:连接数
+      node_addr: "192.168.160.159:12301"
+      # 节点连接数
+      conn_cnt: 10
+      # RPC连接是否启用双向TLS认证
+      enable_tls: true
+      # 信任证书池路径
+      trust_root_paths:
+        - "crypto-config/wx-org1.chainmaker.org/ca"
+#        - "crypto-config/wx-org2.chainmaker.org/ca"
+      # TLS hostname
+      tls_host_name: "chainmaker.org"
+#    - # 节点地址，格式为：IP:端口:连接数
+#      node_addr: "127.0.0.1:12302"
+#      # 节点连接数
+#      conn_cnt: 10
+#      # RPC连接是否启用双向TLS认证
+#      enable_tls: true
+#      # 信任证书池路径
+#      trust_root_paths:
+#        - "crypto-config/wx-org1.chainmaker.org/ca"
+#        - "crypto-config/wx-org2.chainmaker.org/ca"
+#      # TLS hostname
+#      tls_host_name: "chainmaker.org"
+#  archive:
+#    # 数据归档链外存储相关配置
+#    type: "mysql"
+#    dest: "root:123456:localhost:3306"
+#    secret_key: xxx
+
+  rpc_client:
+    # grpc客户端最大接受容量(MB)
+    max_receive_message_size: 16
