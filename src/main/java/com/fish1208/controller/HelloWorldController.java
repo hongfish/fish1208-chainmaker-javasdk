@@ -105,6 +105,7 @@ public class HelloWorldController {
         Function function = new Function("get", Arrays.asList(), Arrays.asList(new TypeReference<Utf8String>() {}));
 //        Function function = new Function( "get", Arrays.asList(), Collections.emptyList());
 
+
         String methodDataStr = FunctionEncoder.encode(function);
         String method = methodDataStr.substring(0,10);
         params.put(CONTRACT_ARGS_EVM_PARAM, methodDataStr.getBytes());
