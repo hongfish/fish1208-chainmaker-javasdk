@@ -84,9 +84,9 @@ chain_client:
 
 ![004.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/004.png)
 
-## 拷贝javasdk的jar包
-### javasdk的jar包拷贝到项目src/main/resources/lib目录下
-jar文件在sdk-java/build/libs目录下
+## 拷贝java-sdk的jar包
+### java-sdk的jar包拷贝到项目src/main/resources/lib目录下
+jar包文件在sdk-java/build/libs目录下
 ![008.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/008.png)
 
 ## 拷贝证书
@@ -106,7 +106,7 @@ jar文件在sdk-java/build/libs目录下
 
 ## 调用接口
 ### 根据区块高度来获取区块信息
-####传参blockHeight=0，返回创始区块的区块时间
+传参blockHeight=0，返回创始区块的区块时间
 http://127.0.0.1:7022/chain/getBlockInfo?blockHeight=0
 
 **请求**
