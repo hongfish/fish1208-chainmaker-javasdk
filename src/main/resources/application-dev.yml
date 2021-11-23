@@ -1,2 +1,2 @@
 sdk-config:
-  config-path: classpath:sdk_config.yml
+  config-path: classpath:sdk_config.yml  #区块链集群的配置文件
