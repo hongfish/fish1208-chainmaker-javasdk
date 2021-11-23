@@ -1,6 +1,8 @@
 # 基于ChainMaker的java-sdk实现区块链服务
 集群的版本与jar包的版本必须使用一致！！！
+
 集群的版本与jar包的版本必须使用一致！！！
+
 集群的版本与jar包的版本必须使用一致！！！
 
 ## 部署ChainMaker集群
@@ -12,13 +14,13 @@ https://docs.chainmaker.org.cn/v2.0.0/html/dev/SDK.html#id13
 ## 项目结构
 基于spring-boot的mvn项目
 
-![001.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/main/src/main/resources/image/001.png)
+![001.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/001.png)
 * crypto-config   证书
 
-![002.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/main/src/main/resources/image/002.png)
+![002.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/002.png)
 * contract 应用合约，sol、bin文件
 
-![003.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/main/src/main/resources/image/003.png)
+![003.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/003.png)
 * application-dev.yml
 ```
 sdk-config:
@@ -80,17 +82,17 @@ chain_client:
 * pom.xml
 引用chainmaker-javasdk的2.0.0版本
 
-![004.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/main/src/main/resources/image/004.png)
+![004.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/004.png)
 
 ## 拷贝javasdk的jar包
 ### javasdk的jar包拷贝到项目src/main/resources/lib目录下
 jar文件在sdk-java/build/libs目录下
-![008.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/main/src/main/resources/image/008.png)
+![008.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/008.png)
 
 ## 拷贝证书
 ### 集群的证书文件夹crypto-config拷贝到项目根目录下
 证书文件在chainmaker-go/build目录下
-![005.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/main/src/main/resources/image/005.png)
+![005.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/005.png)
 
 ## 代码开发
 ### ChainSDKConfig.java
@@ -100,7 +102,7 @@ jar文件在sdk-java/build/libs目录下
 根据区块高度来获取区块信息。
 
 ## 项目启动
-![006.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/main/src/main/resources/image/006.png)
+![006.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/006.png)
 
 ## 调用接口
 ### 根据区块高度来获取区块信息
@@ -112,7 +114,7 @@ http://127.0.0.1:7022/chain/getBlockInfo?blockHeight=0
 GET /contract/person/get HTTP/1.1  
 blockHeight=0
 ```
-![007.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/main/src/main/resources/image/007.png)
+![007.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/007.png)
 
 ## Github地址
 https://github.com/hongfish/fish1208-chainmaker-javasdk
