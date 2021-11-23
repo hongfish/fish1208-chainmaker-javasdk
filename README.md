@@ -105,8 +105,7 @@ jar包文件在sdk-java/build/libs目录下
 ![006.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/006.png)
 
 ## 调用接口
-### 根据区块高度来获取区块信息
-传参blockHeight=0，返回创始区块的区块时间
+### 根据区块高度来获取区块信息（传参blockHeight=0，返回创始区块的区块时间）
 http://127.0.0.1:7022/chain/getBlockInfo?blockHeight=0
 
 **请求**
@@ -115,6 +114,7 @@ GET /contract/person/get HTTP/1.1
 blockHeight=0
 ```
 ![007.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/007.png)
+![008.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/008.png)
 
 ## Github地址
 https://github.com/hongfish/fish1208-chainmaker-javasdk
