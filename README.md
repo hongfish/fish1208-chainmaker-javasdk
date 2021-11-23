@@ -1,4 +1,8 @@
 # 基于ChainMaker的java-sdk实现区块链服务
+集群的版本与jar包的版本必须使用一致！！！
+集群的版本与jar包的版本必须使用一致！！！
+集群的版本与jar包的版本必须使用一致！！！
+
 ## 部署ChainMaker集群
 https://docs.chainmaker.org.cn/tutorial/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8.html#id5
 
@@ -9,7 +13,7 @@ https://docs.chainmaker.org.cn/v2.0.0/html/dev/SDK.html#id13
 基于spring-boot的mvn项目
 
 ![001.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/main/src/main/resources/image/001.png)
-* crypto-config   ca证书、user证书
+* crypto-config   证书
 
 ![002.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/main/src/main/resources/image/002.png)
 * contract 应用合约，sol、bin文件
