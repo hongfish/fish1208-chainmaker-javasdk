@@ -1,4 +1,10 @@
 # 基于ChainMaker的java-sdk实现区块链服务
+## 部署ChainMaker集群
+https://docs.chainmaker.org.cn/tutorial/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8.html#id5
+
+## 生成java-sdk的jar包
+https://docs.chainmaker.org.cn/v2.0.0/html/dev/SDK.html#id13
+
 ## 项目结构
 基于spring-boot的mvn项目
 
@@ -72,8 +78,13 @@ chain_client:
 
 ![004.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/main/src/main/resources/image/004.png)
 
+## 拷贝javasdk的jar包
+### javasdk的jar包拷贝到项目src/main/resources/lib目录下
+jar文件在sdk-java/build/libs目录下
+![008.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/main/src/main/resources/image/008.png)
+
 ## 拷贝证书
-### 集群的链证书、机构证书、机构私钥复制项目根目录下
+### 集群的证书文件夹crypto-config拷贝到项目根目录下
 证书文件在chainmaker-go/build目录下
 ![005.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/main/src/main/resources/image/005.png)
 
