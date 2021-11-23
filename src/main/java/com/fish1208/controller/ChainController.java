@@ -10,6 +10,7 @@ import org.chainmaker.sdk.SdkException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -25,10 +26,10 @@ public class ChainController {
     @Autowired
     private ChainClient chainClient;
 
-    @GetMapping(value = "/getBlockHeight")
-    public Result<?> getBlockHeight() throws SdkException{
+    @GetMapping(value = "/getBlockInfo")
+    public Result<?> getBlockInfo(@RequestParam Long blockHeight) throws SdkException{
 
-        ChainmakerBlock.BlockInfo blockInfo = chainClient.getBlockByHeight(0, true, rpcCallTimeout);
+        ChainmakerBlock.BlockInfo blockInfo = chainClient.getBlockByHeight(blockHeight, true, rpcCallTimeout);
         ChainmakerBlock.BlockHeader blockHeader = blockInfo.getBlock().getHeader();
         return Result.data(blockHeader.getBlockTimestamp());
     }
