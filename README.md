@@ -9,7 +9,7 @@ https://docs.chainmaker.org.cn/v2.0.0/html/dev/SDK.html#id13
 基于spring-boot的mvn项目
 
 ![001.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/main/src/main/resources/image/001.png)
-* conf   链证书、机构证书、机构私钥、账户
+* crypto-config   ca证书、user证书
 
 ![002.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/main/src/main/resources/image/002.png)
 * contract 应用合约，sol、bin文件
