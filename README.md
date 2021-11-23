@@ -114,7 +114,7 @@ GET /contract/person/get HTTP/1.1
 blockHeight=0
 ```
 ![007.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/007.png)
-![008.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/008.png)
+![009.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/009.png)
 
 ## Github地址
 https://github.com/hongfish/fish1208-chainmaker-javasdk
