@@ -1,0 +1,16 @@
+[package]
+name = "contract_helloworld"
+version = "2.0.0"
+authors = ["chainmaker"]
+edition = "2018"
+[dependencies]
+base64 = "0.12.1"
+chrono = "0.4.19"
+[lib]
+crate-type = ["cdylib"]
+[profile.release]
+lto = true
+opt-level = 'z'
+panic = 'abort'
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = ['-Oz']
