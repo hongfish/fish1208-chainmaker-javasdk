@@ -1,4 +1,4 @@
-# 基于ChainMaker的java-sdk实现区块链服务
+# 基于ChainMaker的java-sdk(v2.1.0)实现区块链服务
 集群的版本与jar包的版本必须使用一致！！！
 
 集群的版本与jar包的版本必须使用一致！！！
@@ -80,9 +80,13 @@ chain_client:
 ```
 
 * pom.xml
-引用chainmaker-javasdk的2.0.0版本
+引用chainmaker-javasdk的2.1.0版本
 
 ![004.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/004.png)
+
+## 拷贝dll文件
+### 在windows环境下，将resources/win32-x86-64目录下的文件拷贝到C:\Windows\System32下
+![010.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/010.png)
 
 ## 拷贝java-sdk的jar包
 ### java-sdk的jar包拷贝到项目src/main/resources/lib目录下

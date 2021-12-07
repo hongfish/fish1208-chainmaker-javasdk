@@ -1,5 +1,6 @@
 package com.fish1208.controller;
 
+import com.fish1208.bean.HelloWorld;
 import com.fish1208.common.response.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
@@ -16,10 +17,7 @@ import org.chainmaker.sdk.utils.Utils;
 import org.chainmaker.sdk.utils.UtilsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.web3j.abi.FunctionEncoder;
 import org.web3j.abi.TypeReference;
 import org.web3j.abi.datatypes.Address;
@@ -38,7 +36,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * HelloWorld合约控制器
+ * HelloWorld合约(wasm版)控制器
  */
 @Slf4j
 @RestController
@@ -48,8 +46,7 @@ public class HelloWorldController {
     private static long rpcCallTimeout = 10000;
     private static long syncResultTimeout = 10000;
 
-    private static final String CONTRACT_NAME = "helloworld02";
-    private static final String CONTRACT_ARGS_EVM_PARAM = "data";
+    private static final String CONTRACT_NAME = "helloworld";
     private static String ADDRESS = "";
 
     @Autowired
@@ -76,19 +73,17 @@ public class HelloWorldController {
         }
     }
 
-    @GetMapping(value = "/set")
-    public Result<?> set(@RequestParam String n) throws IOException, SdkException{
+    @PostMapping(value = "/set")
+    public Result<?> set(@RequestBody HelloWorld hello) throws IOException, SdkException{
+//        makeAddrFromCert();
 
         Map<String, byte[]> params = new HashMap<>();
-        Function function = new Function("set", Arrays.asList(new Utf8String(n)), Collections.emptyList());
-//        Function function = new Function( "set", Arrays.asList(), Collections.emptyList());
-        String methodDataStr = FunctionEncoder.encode(function);
-        String method = methodDataStr.substring(0,10);
-        params.put(CONTRACT_ARGS_EVM_PARAM, methodDataStr.getBytes());
+        params.put("n",  hello.getN().getBytes());
+        String method = "set";
 
         ResultOuterClass.TxResponse responseInfo = null;
         try {
-            responseInfo = chainClient.invokeContract(Utils.calcContractName(CONTRACT_NAME),
+            responseInfo = chainClient.invokeContract(CONTRACT_NAME,
                     method, null, params, rpcCallTimeout, syncResultTimeout);
         } catch (SdkException e) {
             e.printStackTrace();
@@ -99,25 +94,15 @@ public class HelloWorldController {
 
     @GetMapping(value = "/get")
     public Result<?> get() throws IOException, SdkException{
-        makeAddrFromCert();
-        Map<String, byte[]> params = new HashMap<>();
-
-        Function function = new Function("get", Arrays.asList(), Arrays.asList(new TypeReference<Utf8String>() {}));
-//        Function function = new Function( "get", Arrays.asList(), Collections.emptyList());
-
-
-        String methodDataStr = FunctionEncoder.encode(function);
-        String method = methodDataStr.substring(0,10);
-        params.put(CONTRACT_ARGS_EVM_PARAM, methodDataStr.getBytes());
-
+//        makeAddrFromCert();
+        String method = "get";
         ResultOuterClass.TxResponse responseInfo = null;
         try {
-            responseInfo = chainClient.queryContract(Utils.calcContractName(CONTRACT_NAME),
-                    method, null, params,rpcCallTimeout);
+            responseInfo = chainClient.queryContract(CONTRACT_NAME, method, null, null, rpcCallTimeout);
         } catch (SdkException e) {
             e.printStackTrace();
         }
-        return Result.data(responseInfo.getContractResult().getResult());
+        return Result.data(responseInfo.getContractResult().getResult().toString());
     }
 
 }
