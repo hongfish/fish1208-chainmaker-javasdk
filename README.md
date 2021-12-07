@@ -91,11 +91,13 @@ chain_client:
 ## 拷贝java-sdk的jar包
 ### java-sdk的jar包拷贝到项目src/main/resources/lib目录下
 jar包文件在sdk-java/build/libs目录下
+
 ![008.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/008.png)
 
 ## 拷贝证书
 ### 集群的证书文件夹crypto-config拷贝到项目根目录下
 证书文件在chainmaker-go/build目录下
+
 ![005.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/005.png)
 
 ## 代码开发
@@ -114,7 +116,7 @@ http://127.0.0.1:7022/chain/getBlockInfo?blockHeight=0
 
 **请求**
 ```$xslt
-GET /contract/person/get HTTP/1.1  
+GET /chain/getBlockInfo HTTP/1.1  
 blockHeight=0
 ```
 ![007.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/007.png)
