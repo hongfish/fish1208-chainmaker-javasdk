@@ -120,5 +120,26 @@ blockHeight=0
 ![007.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/007.png)
 ![009.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/009.png)
 
+### 调用HelloWorld合约set方法
+http://127.0.0.1:7022/helloworld/set
+
+**请求**
+```$xslt
+POST /helloworld/set HTTP/1.1  
+{
+	"n":"Hello, ChainMaker"
+}
+```
+![011.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/011.png)
+
+### 调用HelloWorld合约get方法
+http://127.0.0.1:7022/helloworld/get
+
+**请求**
+```$xslt
+GET /helloworld/get HTTP/1.1  
+```
+![012.png](https://github.com/hongfish/fish1208-chainmaker-javasdk/blob/master/src/main/resources/image/012.png)
+
 ## Github地址
 https://github.com/hongfish/fish1208-chainmaker-javasdk
