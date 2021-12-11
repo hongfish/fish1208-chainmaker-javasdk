@@ -44,12 +44,11 @@ pub extern "C" fn set() {
 
     // 存储
     ctx.put_state(
-        "key_h", 
-        "n", 
+        "key_001",
+        "n",
         ec.marshal().as_slice(),
     );
 }
-
 
 #[no_mangle]
 pub extern "C" fn get() {
@@ -57,7 +56,7 @@ pub extern "C" fn get() {
     let ctx = &mut sim_context::get_sim_context();
 
     // 查询
-    let r = ctx.get_state("key_h","n");
+    let r = ctx.get_state("key_001","n");
 
     // 校验返回结果
     if r.is_err() {
@@ -65,15 +64,16 @@ pub extern "C" fn get() {
         ctx.error("get_state fail");
         return;
     }
-    let fact_vec = r.unwrap();
-    if fact_vec.len() == 0 {
+
+    let n_vec = r.unwrap();
+    if n_vec.len() == 0 {
         ctx.log("None");
-        ctx.ok("".as_bytes());
+        ctx.ok("Hello World".as_bytes());
         return;
     }
 
     // 查询
-    let r = ctx.get_state("key_h","n").unwrap();
+    let r = ctx.get_state("key_001","n").unwrap();
     let ec = EasyCodec::new_with_bytes(&r);
 
     let json_str = ec.to_json();
