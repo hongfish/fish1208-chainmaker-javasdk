@@ -64,12 +64,11 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.chainmaker/chainmaker-sdk-java -->
         <dependency>
-            <groupId>com.chainmaker</groupId>
+            <groupId>org.chainmaker</groupId>
             <artifactId>chainmaker-sdk-java</artifactId>
             <version>2.1.0</version>
-            <scope>system</scope>
-            <systemPath>${pom.basedir}\src\main\resources\lib\chainmaker-sdk-java-2.1.0-SNAPSHOT.jar</systemPath>
         </dependency>
 
         <dependency>

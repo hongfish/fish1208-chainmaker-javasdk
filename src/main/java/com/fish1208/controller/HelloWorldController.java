@@ -38,11 +38,11 @@ public class HelloWorldController {
         ResultOuterClass.TxResponse responseInfo = null;
         try {
             responseInfo = chainClient.invokeContract(CONTRACT_NAME, method, null, params, rpcCallTimeout, syncResultTimeout);
+            return Result.data(responseInfo.getCode());
         } catch (SdkException e) {
-            e.printStackTrace();
+            log.error("set is fail, e = {}",e);
         }
-
-        return Result.data(responseInfo.getCode());
+        return Result.fail("helloworld合约set方法失败！");
     }
 
     @GetMapping(value = "/get")

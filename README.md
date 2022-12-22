@@ -11,6 +11,9 @@ https://docs.chainmaker.org.cn/tutorial/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8.htm
 ## 生成java-sdk的jar包
 https://docs.chainmaker.org.cn/v2.0.0/html/dev/SDK.html#id13
 
+##jdk版本
+jdk 1.8.0_202或以下
+
 ## 项目结构
 基于spring-boot的mvn项目
 

@@ -14,7 +14,7 @@ chain_client:
 
   nodes:
     - # 节点地址，格式为：IP:端口:连接数
-      node_addr: "192.168.229.145:12301"
+      node_addr: "192.168.229.202:12301"
       # 节点连接数
       conn_cnt: 10
       # RPC连接是否启用双向TLS认证
